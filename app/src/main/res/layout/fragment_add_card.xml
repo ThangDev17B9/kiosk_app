@@ -210,10 +210,21 @@
                     android:layout_height="wrap_content"
                     android:text="Chọn tất cả"
                     tools:ignore="HardcodedText" />
+                <ImageView
+                    android:padding="6dp"
+                    android:background="@drawable/custom_drop_down_img"
+                    android:id="@+id/ivDropDown"
+                    android:layout_marginStart="18dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_drop"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
                 android:id="@+id/recyclerViewDoor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

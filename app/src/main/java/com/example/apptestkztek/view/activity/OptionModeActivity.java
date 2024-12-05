@@ -11,7 +11,6 @@ import com.example.apptestkztek.databinding.ActivityOptionModeBinding;
 public class OptionModeActivity extends BaseActivity {
 
     public ActivityOptionModeBinding binding;
-    public OverscanHelper overscanHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +23,12 @@ public class OptionModeActivity extends BaseActivity {
             BackToHomeDivece();
             return false;
         });
-        overscanHelper = new OverscanHelper();
-        overscanHelper.setOverscan("0,-50,0,-100");
+
     }
 
     private void BackToHomeDivece() {
-        overscanHelper = new OverscanHelper();
-        overscanHelper.setOverscan("reset");
+        OverscanHelper overscanHelper = new OverscanHelper();
+        overscanHelper.resetDefaultScreen();
         stopLockTask();
         finishAffinity();
     }

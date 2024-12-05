@@ -46,14 +46,14 @@
             android:name=".view.activity.ConnectDeviceActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.SplashActivity"
+            android:name=".view.activity.OptionModeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppTestKztek" />
         <activity
-            android:name=".view.activity.OptionModeActivity"
+            android:name=".view.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -33,6 +34,7 @@ public class AddCardFragment extends Fragment {
     public Button btnSaveCard;
     public RecyclerView recyclerViewDoor;
     public CheckboxDoorAdapter adapter;
+    public ImageView ivDrop;
     public List<Door> doorList;
 
     @Override
@@ -47,11 +49,21 @@ public class AddCardFragment extends Fragment {
         btnSaveCard = view.findViewById(R.id.btnSaveCardUser);
         cbDoorModeAll = view.findViewById(R.id.cbDoorModeAll);
         recyclerViewDoor = view.findViewById(R.id.recyclerViewDoor);
+        ivDrop = view.findViewById(R.id.ivDropDown);
+        ivDrop.setOnClickListener(v->ShowRecyclerView());
         showAdapterCheckboxDoor();
         btnSaveCard.setOnClickListener(v -> saveCardUser());
         actvCard.setOnClickListener(v->ListItemCard());
         actvLenCard.setOnClickListener(v->ListItemLenCard());
         return view;
+    }
+
+    private void ShowRecyclerView() {
+        if(recyclerViewDoor.getVisibility() == View.GONE){
+            recyclerViewDoor.setVisibility(View.VISIBLE);
+        }else{
+            recyclerViewDoor.setVisibility(View.GONE);
+        }
     }
 
     private void ListItemLenCard() {
