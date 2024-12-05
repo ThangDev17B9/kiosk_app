@@ -14,9 +14,8 @@
         android:theme="@style/Theme.AppTestKztek"
         tools:ignore="ObsoleteSdkInt"
         tools:targetApi="31">
-        <!-- Định nghĩa DeviceAdminReceiver -->
         <receiver
-            android:name=".MyDeviceAdminReceiver"
+            android:name=".controller.root.admin.MyDeviceAdminReceiver"
             android:exported="true"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
@@ -26,39 +25,35 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
-
         <activity
-            android:name=".MyDeviceAdminReceiver"
-            android:exported="false" />
-        <activity
-            android:name=".BaseActivity"
+            android:name=".view.activity.BaseActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:lockTaskMode="always" />
         <activity
-            android:name=".screens.activity.UserCardActivity"
+            android:name=".view.activity.UserCardActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.activity.VersionInforActivity"
+            android:name=".view.activity.VersionInforActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.activity.StatusActivity"
+            android:name=".view.activity.StatusActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.activity.SettingActivity"
+            android:name=".view.activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.activity.ConnectDeviceActivity"
+            android:name=".view.activity.ConnectDeviceActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.activity.SplashActivity"
+            android:name=".view.activity.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppTestKztek" />
         <activity
-            android:name=".screens.activity.OptionModeActivity"
+            android:name=".view.activity.OptionModeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

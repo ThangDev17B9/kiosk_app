@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".screens.activity.VersionInforActivity">
+    tools:context=".view.activity.VersionInforActivity">
     <androidx.appcompat.widget.Toolbar
         android:background="@drawable/gradient_drawable"
         android:layout_width="match_parent"

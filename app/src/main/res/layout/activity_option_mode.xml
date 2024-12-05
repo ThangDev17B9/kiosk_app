@@ -8,9 +8,10 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".screens.activity.OptionModeActivity">
+    tools:context=".view.activity.OptionModeActivity">
 
     <ImageView
+        android:layout_marginBottom="20dp"
         android:id="@+id/ivLogo"
         android:layout_width="120dp"
         android:layout_height="36dp"
