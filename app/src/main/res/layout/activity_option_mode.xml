@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_drawable"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".screens.activity.OptionModeActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_logo"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:ignore="UselessLeaf">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:shadowColor="@color/black"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="10"
+                android:text="Ngôn ngữ"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <AutoCompleteTextView
+                android:hint="Tiếng Việt.."
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:paddingStart="8dp"
+                android:id="@+id/actvLanguage"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_bg_edt"
+                android:drawableEnd="@drawable/ic_drop_down"
+                tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:shadowColor="@color/black"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="10"
+                android:text="Chế độ hoạt động"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <AutoCompleteTextView
+                android:hint="MODE.."
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:id="@+id/actvMode"
+                android:paddingStart="8dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/custom_bg_edt"
+                android:drawableEnd="@drawable/ic_drop_down"
+                tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#ECE6F0"
+            android:elevation="10dp"
+            android:shadowColor="@color/black"
+            android:text="Xác nhận"
+            android:textColor="#3F51B5"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="IP Address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+        <EditText
+            android:hint="ip address.."
+            android:padding="8dp"
+            android:id="@+id/edtChangeIpAddress"
+            android:background="@drawable/custom_bg_edt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Subnet Mask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+        <EditText
+            android:hint="subnet mask.."
+            android:padding="8dp"
+            android:id="@+id/edtChangeSubnetMask"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/custom_bg_edt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Default Gateway"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+        <EditText
+            android:hint="default gateway.."
+            android:paddingStart="8dp"
+            android:id="@+id/edtChangeDefaultGateway"
+            android:background="@drawable/custom_bg_edt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Mac Address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+        <EditText
+            android:hint="mac address.."
+            android:paddingStart="8dp"
+            android:layout_marginVertical="6dp"
+            android:id="@+id/edtChangeMacAddress"
+            android:background="@drawable/custom_bg_edt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="end"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnReloadText"
+            android:textColor="@color/black"
+            android:backgroundTint="#8AD3D9"
+            android:text="Làm mới"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="ButtonStyle,HardcodedText" />
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/black"
+            android:backgroundTint="#8AD3D9"
+            android:text="Lưu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="ButtonStyle,HardcodedText" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="8dp"
+    tools:context=".screens.fragments.AddCardFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:text="Thông tin người dùng: "
+                android:textColor="#740808"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mã người dùng"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:hint="user id .."
+                    android:padding="8dp"
+                    android:id="@+id/edtUserId"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:inputType="number"
+                    tools:ignore="Autofill,HardcodedText,LabelFor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mode"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:hint="mode .."
+                    android:padding="8dp"
+                    android:id="@+id/edtMode"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:inputType="number"
+                    tools:ignore="Autofill,HardcodedText,LabelFor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mật khẩu"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:hint="pin.."
+                    android:padding="8dp"
+                    android:id="@+id/edtPassword"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:inputType="number"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Timezone"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:hint="timezone.."
+                    android:padding="8dp"
+                    android:id="@+id/edtTimezone"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:inputType="number"
+                    tools:ignore="Autofill,HardcodedText,LabelFor" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin thẻ:"
+                android:textColor="#740808"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Độ dài thẻ"
+                    tools:ignore="HardcodedText" />
+
+                <AutoCompleteTextView
+                    android:hint="length card.."
+                    android:padding="8dp"
+                    android:id="@+id/actvLenCard"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:cursorVisible="false"
+                    android:drawableEnd="@drawable/ic_drop_down"
+                    android:focusable="false"
+                    tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mã số thẻ"
+                    tools:ignore="HardcodedText" />
+
+                <AutoCompleteTextView
+                    android:hint="card id.."
+                    android:padding="8dp"
+                    android:id="@+id/actvCardId"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_bg_edt"
+                    android:cursorVisible="false"
+                    android:drawableEnd="@drawable/ic_drop_down"
+                    android:focusable="false"
+                    tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Thông tin cửa:"
+                android:textColor="#740808"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mở cửa:"
+                    tools:ignore="HardcodedText" />
+
+                <CheckBox
+                    android:hint=""
+                    android:id="@+id/cbDoorModeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chọn tất cả"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDoor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="6"
+                tools:itemCount="64"
+                tools:listitem="@layout/item_checkbox_door" />
+
+            <Button
+                android:id="@+id/btnSaveCardUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="#8AD3D9"
+                android:text="Lưu thông tin thẻ"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

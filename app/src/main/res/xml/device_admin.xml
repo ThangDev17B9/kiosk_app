@@ -1,0 +1,4 @@
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-policy
+        android:name="android.app.admin.ACTION_LOCK_TASK"/>
+</device-admin>
