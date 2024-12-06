@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#121212"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_drawable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/ivBackToConnectDeviceActivity"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_back"
-            tools:ignore="ContentDescription" />
-    </androidx.appcompat.widget.Toolbar>
-
     <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:src="@drawable/ic_logo"
+            android:layout_width="120dp"
+            android:layout_height="36dp"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/selector_effect"
+        android:focusable="true"
+        android:clickable="true"
         android:id="@+id/lnNextToSettingActivity"
         android:padding="16dp"
         android:orientation="horizontal"
@@ -34,19 +32,40 @@
         android:layout_height="wrap_content"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:padding="6dp"
+            android:backgroundTint="#43A047"
+            android:background="@drawable/custom_icon_bg"
             android:src="@drawable/ic_setting"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             tools:ignore="ContentDescription" />
         <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             android:text="Cấu hình thiết bị"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
+    <View
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="#1FFFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect"
         android:id="@+id/lnNextToAddCardActivity"
         android:padding="16dp"
         android:orientation="horizontal"
@@ -54,19 +73,33 @@
         android:layout_height="wrap_content"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:padding="6dp"
+            android:background="@drawable/custom_icon_bg"
+            android:backgroundTint="#1E88E5"
             android:src="@drawable/ic_card"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             tools:ignore="ContentDescription" />
         <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             android:text="Nạp, hủy thẻ"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect"
         android:id="@+id/lnNextToStatusActity"
         android:padding="16dp"
         android:orientation="horizontal"
@@ -74,19 +107,40 @@
         android:layout_height="wrap_content"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:padding="6dp"
+            android:backgroundTint="#039BE5"
+            android:background="@drawable/custom_icon_bg"
             android:src="@drawable/ic_status"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             tools:ignore="ContentDescription" />
         <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             android:text="Theo dõi trạng thái tủ đồ"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
+    <View
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="#1FFFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect"
         android:id="@+id/lnNextToVersionInforActivity"
         android:padding="16dp"
         android:orientation="horizontal"
@@ -94,19 +148,33 @@
         android:layout_height="wrap_content"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:padding="6dp"
+            android:background="@drawable/custom_icon_bg"
+            android:backgroundTint="#FB8C00"
             android:src="@drawable/ic_version"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             tools:ignore="ContentDescription" />
         <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             android:text="Thông tin phiên bản"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect"
         android:id="@+id/lnNextToResetActivity"
         android:padding="16dp"
         android:orientation="horizontal"
@@ -114,16 +182,67 @@
         android:layout_height="wrap_content"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:padding="6dp"
+            android:background="@drawable/custom_icon_bg"
+            android:backgroundTint="#DD2C00"
             android:src="@drawable/ic_reset"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             tools:ignore="ContentDescription" />
         <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             android:text="Khôi phục cài đặt"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
+        <ImageView
+            android:src="@drawable/ic_arrow_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+    <View
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="#1FFFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect"
+        android:id="@+id/lnBackToConnectActivity"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UseCompoundDrawables">
+        <ImageView
+            android:padding="6dp"
+            android:background="@drawable/custom_icon_bg"
+            android:backgroundTint="#FFB300"
+            android:src="@drawable/ic_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_weight="1"
+            android:textColor="@color/white_off"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"
+            android:text="Quay lại màn hình đăng nhập"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 </LinearLayout>

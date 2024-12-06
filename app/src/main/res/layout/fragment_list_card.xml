@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient_drawable"
     android:padding="8dp"
     tools:context=".view.fragments.ListCardFragment">
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -16,6 +16,7 @@
             android:layout_height="match_parent"
             tools:ignore="UselessParent">
             <androidx.recyclerview.widget.RecyclerView
+                android:background="@drawable/gradient_drawable"
                 android:id="@+id/recyclerViewListUserCard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -48,7 +48,6 @@ public class SetUpTimeFragment extends Fragment {
         btnSetTimeNow = view.findViewById(R.id.btnSetTimeNow);
         btnSave = view.findViewById(R.id.btnSave);
         btnShowTime = view.findViewById(R.id.btnShowTimeDate);
-        imgDatePicker = view.findViewById(R.id.imgDatePicker);
         btnSetTimeNow.setOnClickListener(v -> SetTimeNow());
         btnSave.setOnClickListener(v -> SaveDateTime());
         btnShowTime.setOnClickListener(v -> ShowDateTime());

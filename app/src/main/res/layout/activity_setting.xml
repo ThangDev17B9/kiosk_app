@@ -6,26 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#1E88E5"
     tools:context=".view.activity.SettingActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_drawable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_effect_back"
+            android:padding="8dp"
             android:id="@+id/ivBackToMainActivity"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_back"
             tools:ignore="ContentDescription" />
-    </androidx.appcompat.widget.Toolbar>
     <com.google.android.material.tabs.TabLayout
-        android:background="@color/white"
+        android:background="#1E88E5"
+        app:tabTextColor="@color/white_off"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

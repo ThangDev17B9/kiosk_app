@@ -25,85 +25,44 @@
         android:orientation="vertical"
         tools:ignore="UselessLeaf">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:shadowColor="@color/black"
-                android:shadowDx="2"
-                android:shadowDy="2"
-                android:shadowRadius="10"
-                android:text="Ngôn ngữ"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
             <AutoCompleteTextView
+                android:background="@drawable/custom_bg_edt"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textColorHint="#999999"
                 android:hint="Tiếng Việt.."
                 android:focusable="false"
                 android:cursorVisible="false"
-                android:paddingStart="8dp"
                 android:id="@+id/actvLanguage"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:background="@drawable/custom_bg_edt"
                 android:drawableEnd="@drawable/ic_drop_down"
                 tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:shadowColor="@color/black"
-                android:shadowDx="2"
-                android:shadowDy="2"
-                android:shadowRadius="10"
-                android:text="Chế độ hoạt động"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
             <AutoCompleteTextView
-                android:hint="MODE.."
+                android:background="@drawable/custom_bg_edt"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textColorHint="#999999"
+                android:layout_marginVertical="6dp"
+                android:hint="Mode.."
                 android:focusable="false"
                 android:cursorVisible="false"
                 android:id="@+id/actvMode"
-                android:paddingStart="8dp"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/custom_bg_edt"
                 android:drawableEnd="@drawable/ic_drop_down"
                 tools:ignore="HardcodedText,LabelFor,RtlSymmetry" />
-        </LinearLayout>
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#ECE6F0"
+            android:backgroundTint="#039BE5"
             android:elevation="10dp"
-            android:shadowColor="@color/black"
+            android:shadowColor="@color/white_off"
             android:text="Xác nhận"
-            android:textColor="#3F51B5"
+            android:textColor="@color/white"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 </LinearLayout>

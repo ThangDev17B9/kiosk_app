@@ -51,7 +51,7 @@ public class OptionModeActivity extends BaseActivity {
     private void NextToConnectDeviceActivity() {
         String language = binding.actvLanguage.getText().toString();
         String mode = binding.actvMode.getText().toString();
-        if(language.isEmpty() && mode.isEmpty()){
+        if(language.isEmpty() || mode.isEmpty()){
             Toast.makeText(this, "Bạn chưa chọn đủ thông tin", Toast.LENGTH_SHORT).show();
         }else{
             Intent intent = new Intent(this, ConnectDeviceActivity.class);

@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity {
         binding.lnNextToStatusActity.setOnClickListener(v->NextToStatusActivity());
         binding.lnNextToVersionInforActivity.setOnClickListener(v->NextToVersionInforActivity());
         binding.lnNextToResetActivity.setOnClickListener(v->NextToResetActivity());
-        binding.ivBackToConnectDeviceActivity.setOnClickListener(v-> BackToConnectDeviceActivity());
+        binding.lnBackToConnectActivity.setOnClickListener(v-> BackToConnectDeviceActivity());
     }
 
     private void BackToConnectDeviceActivity() {

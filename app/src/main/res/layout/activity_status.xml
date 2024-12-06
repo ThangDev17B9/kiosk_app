@@ -11,43 +11,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@drawable/gradient_drawable"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Toolbar
-                android:background="@drawable/gradient_drawable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
                 <ImageView
+                    android:padding="8dp"
                     android:id="@+id/ivBackToMainActivity"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:src="@drawable/ic_back"
                     tools:ignore="ContentDescription" />
-            </Toolbar>
             <TextView
+                android:textColor="@color/white_off"
                 android:textSize="20sp"
                 android:layout_margin="16dp"
-                android:text="Status"
+                android:text="Trạng thái"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textStyle="bold"
                 android:text="Chú ý:"
                 android:layout_marginStart="16dp"
-                android:textColor="#740808"
+                android:textColor="#E53935"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/white_off"
                 android:text="- Đánh dấu là tủ đồ đang mở"
                 android:layout_margin="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <androidx.recyclerview.widget.RecyclerView
+                android:padding="8dp"
+                android:background="#1FFFFFFF"
                 android:id="@+id/recyclerViewStatusActivity"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="6"
@@ -61,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="@color/white_off"
                     android:textStyle="bold"
                     android:layout_marginStart="8dp"
                     android:text="Tủ đồ: "
@@ -81,7 +84,7 @@
                     android:layout_gravity="center_vertical"
                     android:id="@+id/btnSubmitFindCabinet"
                     android:text="Xác nhận"
-                    android:backgroundTint="#8AD3D9"
+                    android:backgroundTint="#1E88E5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:ignore="HardcodedText" />
@@ -92,11 +95,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="@color/white_off"
                     android:text="Trạng thái của tủ đồ đang tìm kiếm: "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:ignore="HardcodedText" />
                 <TextView
+                    android:textColor="@color/white_off"
                     android:id="@+id/tvState"
                     android:text="..."
                     android:textStyle="bold"

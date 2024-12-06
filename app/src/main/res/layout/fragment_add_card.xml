@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient_drawable"
     android:padding="8dp"
     tools:context=".view.fragments.AddCardFragment">
 
@@ -20,11 +20,12 @@
             tools:ignore="UselessParent">
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
                 android:text="Thông tin người dùng: "
-                android:textColor="#740808"
+                android:textColor="#FFFFFF"
                 tools:ignore="HardcodedText" />
 
             <LinearLayout
@@ -33,6 +34,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -40,6 +42,8 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="user id .."
                     android:padding="8dp"
                     android:id="@+id/edtUserId"
@@ -57,6 +61,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -64,6 +69,8 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="mode .."
                     android:padding="8dp"
                     android:id="@+id/edtMode"
@@ -80,6 +87,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,6 +95,8 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="pin.."
                     android:padding="8dp"
                     android:id="@+id/edtPassword"
@@ -104,6 +114,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -111,6 +122,8 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="timezone.."
                     android:padding="8dp"
                     android:id="@+id/edtTimezone"
@@ -122,10 +135,11 @@
             </LinearLayout>
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Thông tin thẻ:"
-                android:textColor="#740808"
+                android:textColor="#039BE5"
                 tools:ignore="HardcodedText" />
 
             <LinearLayout
@@ -135,6 +149,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -142,6 +157,8 @@
                     tools:ignore="HardcodedText" />
 
                 <AutoCompleteTextView
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="length card.."
                     android:padding="8dp"
                     android:id="@+id/actvLenCard"
@@ -160,6 +177,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -167,6 +185,8 @@
                     tools:ignore="HardcodedText" />
 
                 <AutoCompleteTextView
+                    android:textColor="@color/white_off"
+                    android:textColorHint="#999999"
                     android:hint="card id.."
                     android:padding="8dp"
                     android:id="@+id/actvCardId"
@@ -180,11 +200,12 @@
             </LinearLayout>
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Thông tin cửa:"
-                android:textColor="#740808"
+                android:textColor="#039BE5"
                 tools:ignore="HardcodedText" />
 
             <LinearLayout
@@ -193,6 +214,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mở cửa:"
@@ -206,13 +228,15 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:textColor="@color/white_off"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chọn tất cả"
                     tools:ignore="HardcodedText" />
                 <ImageView
+
                     android:padding="6dp"
-                    android:background="@drawable/custom_drop_down_img"
+                    android:background="@drawable/custom_icon_bg"
                     android:id="@+id/ivDropDown"
                     android:layout_marginStart="18dp"
                     android:layout_gravity="center"
@@ -238,9 +262,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:backgroundTint="#8AD3D9"
+                android:backgroundTint="#1E88E5"
                 android:text="Lưu thông tin thẻ"
-                android:textColor="@color/black"
+                android:textColor="@color/white_off"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>

@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     app:cardCornerRadius="10dp"
     android:layout_marginBottom="8dp"
     android:elevation="20dp">
@@ -19,12 +18,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Mã người dùng: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvUserID"
                 android:text="..."
                 android:layout_width="wrap_content"
@@ -38,12 +39,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Mode: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvMode"
                 android:text="..."
                 android:layout_width="wrap_content"
@@ -56,12 +59,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Mật khẩu: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvPassword"
                 android:text="..."
                 android:layout_width="wrap_content"
@@ -75,12 +80,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Timezone: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:text="..."
                 android:id="@+id/tvTimezone"
                 android:layout_width="wrap_content"
@@ -93,12 +100,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Mã số thẻ: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvCardID"
                 android:text="..."
                 android:layout_width="wrap_content"
@@ -112,12 +121,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Độ dài thẻ: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvLenCard"
                 android:text="..."
                 android:layout_width="wrap_content"
@@ -130,12 +141,14 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
             <TextView
+                android:textColor="@color/black"
                 android:text="Cửa đang mở: "
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:textColor="@color/black"
                 android:layout_weight="1"
                 android:id="@+id/tvDoorStatus"
                 android:text="..."
@@ -144,7 +157,7 @@
                 tools:ignore="HardcodedText" />
             <Button
                 android:id="@+id/btnDeleteCard"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#1E88E5"
                 android:layout_gravity="end"
                 android:text="Xóa"
                 android:layout_width="wrap_content"
