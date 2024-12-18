@@ -1,17 +1,15 @@
 package com.example.apptestkztek.view.adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.model.Door;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +43,13 @@ public class CheckboxDoorAdapter  extends RecyclerView.Adapter<CheckboxDoorAdapt
             doorState.add(door.isOpenDoor());
         }
         return doorState;
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    public void setAllChecked(boolean isChecked) {
+        for (Door item : doorList) {
+            item.setOpenDoor(isChecked);
+        }
+        notifyDataSetChanged();
     }
 
     @Override

@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,16 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.apptestkztek.R;
+import com.example.apptestkztek.controller.client.UdpClientManager;
 import com.example.apptestkztek.controller.time.TimeNow;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
-import com.example.apptestkztek.controller.client.UdpClientManager;
 
 public class SetUpTimeFragment extends Fragment {
     public EditText edtHour, edtMinute, edtSecond, edtDay, edtMonth, edtYear;
     public TextView tvHour, tvMinute, tvSecond, tvDay, tvMonth, tvYear;
     public Button btnSetTimeNow, btnSave, btnShowTime;
-    public ImageView imgDatePicker;
 
     @SuppressLint("MissingInflatedId")
     @Nullable
@@ -57,16 +54,23 @@ public class SetUpTimeFragment extends Fragment {
     private void ShowDateTime() {
         new Thread(() -> {
             UdpClientManager.getInstance().require(Constant.getDateTime);
-            String dateTime = UdpClient.response();
-                if(!dateTime.equals("TimeoutException")){
+            String dateTime = UdpClientManager.getInstance().response();
+            Log.e("ShowDateTime: ", dateTime);
+            if (!dateTime.equals("TimeoutException")) {
                     int index = dateTime.indexOf("/");
                     String result = dateTime.substring(index + 1);
                     String year = result.substring(0, 4);
+                    Log.e( "year: ", year);
                     String month = result.substring(4, 6);
+                    Log.e("month: ", month);
                     String day = result.substring(6, 8);
+                    Log.e("day: ", day);
                     String hour = result.substring(8, 10);
+                    Log.e("hour: ", hour);
                     String minute = result.substring(10, 12);
+                    Log.e("minute: ", minute);
                     String second = result.substring(12, 14);
+                    Log.e("second: ", second);
                     requireActivity().runOnUiThread(() -> {
                         tvYear.setText(year);
                         tvMonth.setText(month);
@@ -83,6 +87,7 @@ public class SetUpTimeFragment extends Fragment {
     }
 
     private void SaveDateTime() {
+        new Thread(() -> {
         String year = edtYear.getText().toString();
         String month = edtMonth.getText().toString();
         String day = edtDay.getText().toString();
@@ -95,19 +100,24 @@ public class SetUpTimeFragment extends Fragment {
                 || hour.isEmpty()
                 || minute.isEmpty()
                 || second.isEmpty()) {
-            Toast.makeText(getContext(), "Vui lòng nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();
+            requireActivity().runOnUiThread(() ->
+                    Toast.makeText(getContext(), "Vui lòng nhập đủ dữ liệu", Toast.LENGTH_SHORT).show());
         } else {
-            new Thread(() -> {
-                try {
-                    UdpClientManager.getInstance().require(Constant.setDateTime + year + month + day + hour + minute + second);
-                    requireActivity().runOnUiThread(() -> Toast.makeText(getContext(), "Lưu thành công", Toast.LENGTH_SHORT).show());
+
+            try {
+                String dataReq = UdpClientManager.getInstance().require(Constant.setDateTime + year + month + day + hour + minute + second);
+                Log.e( "SaveDateTime: ", dataReq);
+                String dataRes = UdpClientManager.getInstance().response();
+                if(dataRes != null && !dataRes.equals("Error: TimeoutException")){
+                    requireActivity().runOnUiThread(()-> Toast.makeText(getContext(), "Lưu thành công", Toast.LENGTH_SHORT).show());
+                }
                 } catch (Exception e) {
                     Log.e("SaveDateTime: ", "fail", e);
                     requireActivity().runOnUiThread(() -> Toast.makeText(getContext(), "Lưu thất bại", Toast.LENGTH_SHORT).show());
 
                 }
-            }).start();
         }
+        }).start();
 
     }
 

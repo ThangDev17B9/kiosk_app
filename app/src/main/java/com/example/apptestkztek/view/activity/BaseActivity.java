@@ -10,6 +10,9 @@ import com.example.apptestkztek.MainActivity;
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.controller.root.shell.OverscanHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

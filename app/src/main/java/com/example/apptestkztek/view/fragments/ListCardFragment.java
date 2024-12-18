@@ -17,7 +17,6 @@ import com.example.apptestkztek.R;
 import com.example.apptestkztek.model.User;
 import com.example.apptestkztek.view.adapter.UserCardAdapter;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
 import com.example.apptestkztek.controller.client.UdpClientManager;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,7 @@ public class ListCardFragment extends Fragment {
                 String dataResponse;
                 requireActivity().runOnUiThread(() -> swipeRefreshLayout.setRefreshing(true));
                 UdpClientManager.getInstance().require(Constant.getAllUser);
-                dataResponse = UdpClient.response();
+                dataResponse = UdpClientManager.getInstance().response();
                     if (dataResponse.isEmpty()) {
                         requireActivity().runOnUiThread(() ->
                                 Toast.makeText(getContext(), "Không có dữ liệu trả về", Toast.LENGTH_SHORT).show()

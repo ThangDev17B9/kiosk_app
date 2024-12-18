@@ -41,4 +41,17 @@ public class Constant {
     // get all user
     public static final String getAllUser = "GetAllUser?/";
     public static final String autoDetect = "AutoDetect?";
+
+    // reset
+    public static final String resetDefault = "ResetDefault?/";
+    public static final String resetDevice = "ResetDevice?/";
+    // relay
+    public static final String openCabinet1 = "SetRelay?/Relay=01/State=ON";
+    public static final String openCabinet2 = "SetRelay?/Relay=02/State=ON";
+    public static final String openCabinet3 = "SetRelay?/Relay=03/State=ON";
+    public static final String openCabinet4 = "SetRelay?/Relay=04/State=ON";
+    public static final String openCabinet5 = "SetRelay?/Relay=05/State=ON";
+    public static final String openCabinet6 = "SetRelay?/Relay=06/State=ON";
+    public static final String openCabinet7 = "SetRelay?/Relay=07/State=ON";
+//    public static final String openCabinetAll = "SetRelay?/Relay=08/State=ON";
 }

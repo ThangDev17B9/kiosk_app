@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
 import com.example.apptestkztek.controller.root.shell.OverscanHelper;
 import com.example.apptestkztek.databinding.ActivityOptionModeBinding;
-
 public class OptionModeActivity extends BaseActivity {
 
     public ActivityOptionModeBinding binding;

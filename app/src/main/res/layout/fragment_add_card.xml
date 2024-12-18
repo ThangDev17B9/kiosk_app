@@ -209,9 +209,11 @@
                 tools:ignore="HardcodedText" />
 
             <LinearLayout
+                android:layout_marginVertical="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     android:textColor="@color/white_off"
@@ -220,19 +222,6 @@
                     android:text="Mở cửa:"
                     tools:ignore="HardcodedText" />
 
-                <CheckBox
-                    android:hint=""
-                    android:id="@+id/cbDoorModeAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:ignore="HardcodedText" />
-
-                <TextView
-                    android:textColor="@color/white_off"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chọn tất cả"
-                    tools:ignore="HardcodedText" />
                 <ImageView
 
                     android:padding="6dp"
@@ -253,8 +242,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="6"
-                tools:itemCount="64"
+                app:spanCount="4"
+                tools:itemCount="4"
                 tools:listitem="@layout/item_checkbox_door" />
 
             <Button

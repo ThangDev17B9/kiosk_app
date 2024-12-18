@@ -1,6 +1,7 @@
 package com.example.apptestkztek.view.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -15,7 +16,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.view.adapter.CheckboxStatusAdapter;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
 import com.example.apptestkztek.controller.client.UdpClientManager;
 import com.example.apptestkztek.model.Cabinet;
 
@@ -28,7 +28,8 @@ public class StatusActivity extends BaseActivity {
     private EditText edtFindCabinetToNumber;
     private TextView tvState;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private ImageView ivBackToMainActivity;
+    public ImageView ivBackToMainActivity;
+    public Button btnNextOpenCabinetActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class StatusActivity extends BaseActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerViewStatusActivity);
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayoutStatusActivity);
         ivBackToMainActivity = findViewById(R.id.ivBackToMainActivity);
+        btnNextOpenCabinetActivity = findViewById(R.id.btnNextOpenCabinetActivity);
+        btnNextOpenCabinetActivity.setOnClickListener(v-> NextOpenCabinetActivity());
         ivBackToMainActivity.setOnClickListener(v->IntentMainActivity(this));
         // Khởi tạo danh sách ban đầu
         cabinetList = new ArrayList<>();
@@ -50,25 +53,24 @@ public class StatusActivity extends BaseActivity {
         btnFindCabinet.setOnClickListener(v -> FindCabinetStatus());
     }
 
+    private void NextOpenCabinetActivity() {
+        startActivity(new Intent(this, OpenCabinetActivity.class));
+    }
+
     @SuppressLint("SetTextI18n")
     private void FindCabinetStatus() {
         new Thread(() -> {
             String cabinet = edtFindCabinetToNumber.getText().toString();
             String dataRequire;
-            if (!cabinet.isEmpty()) {
+            if (!cabinet.isEmpty()
+                    && Integer.parseInt(cabinet) <= 36 && Integer.parseInt(cabinet) >= 1) {
                 if(cabinet.length()  < 2){
                     dataRequire = "0" + cabinet;
                 }else{
                     dataRequire = cabinet;
                 }
                 UdpClientManager.getInstance().require(Constant.getInputState + dataRequire);
-                String dataInputState = UdpClient.response();
-                for (int i = 0; i < 10; i++){
-                    UdpClientManager.getInstance().require(Constant.getInputState + dataRequire);
-                    if(dataInputState.length() == 37){
-                        break;
-                    }
-                }
+                String dataInputState = UdpClientManager.getInstance().response();
                 Log.e("UDP Response", dataInputState);
                 if (dataInputState.equals(Constant.getInputState + dataRequire + "/State=0")) {
                     runOnUiThread(() -> tvState.setText("Tủ " + cabinet + " đang mở"));
@@ -78,7 +80,7 @@ public class StatusActivity extends BaseActivity {
                     runOnUiThread(() -> tvState.setText("Tủ " + cabinet + " đang đóng"));
                 }
             } else {
-                runOnUiThread(() -> showToast("Chưa nhập tủ cần kiểm tra trạng thái"));
+                runOnUiThread(() -> showToast("Không tìm thấy tủ đồ"));
             }
         }).start();
     }
@@ -89,11 +91,10 @@ public class StatusActivity extends BaseActivity {
             try {
                 runOnUiThread(()->swipeRefreshLayout.setRefreshing(true));
                 UdpClientManager.getInstance().require(Constant.getAllInputState);
-                UdpClientManager.getInstance();
-                String dataInputState = UdpClient.response();
+                String dataInputState = UdpClientManager.getInstance().response();
                 Log.d("UDP Response", "Data received: " + dataInputState);
-                // Nếu dữ liệu trả về không bị rỗng thì lấy chuỗi sau dấu =
-                if (!dataInputState.isEmpty()) {
+                if (!dataInputState.isEmpty() && !dataInputState.equals("Error: TimeoutException")) {
+                    // lấy chuỗi sau dấu =
                     int index = dataInputState.indexOf("=");
 
                     if (index != -1 && index + 1 < dataInputState.length()) {

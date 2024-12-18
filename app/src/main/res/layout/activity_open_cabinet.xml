@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_drawable"
+    tools:context=".view.activity.OpenCabinetActivity">
+
+    <ImageView
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selector_effect_back"
+        android:padding="8dp"
+        android:id="@+id/ivBackToStatusActivity"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_back"
+        tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:backgroundTint="#0091EA"
+                android:id="@+id/btnOpenCabinet1"
+                android:text="Tủ đồ 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="#0091EA"
+                android:id="@+id/btnOpenCabinet2"
+                android:text="Tủ đồ 2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:backgroundTint="#0091EA"
+                android:id="@+id/btnOpenCabinet3"
+                android:text="Tủ đồ 3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="#0091EA"
+                android:id="@+id/btnOpenCabinet4"
+                android:text="Tủ đồ 4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:backgroundTint="#00B8D4"
+                android:id="@+id/btnOpenCabinet5"
+                android:text="Tủ đồ 5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="#00B8D4"
+                android:id="@+id/btnOpenCabinet6"
+                android:text="Tủ đồ 6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:backgroundTint="#00B8D4"
+                android:id="@+id/btnOpenCabinet7"
+                android:text="Tủ đồ 7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="#00B8D4"
+                android:id="@+id/btnOpenCabinetAll"
+                android:text="Mở tất cả"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.example.apptestkztek.databinding.ActivityMainBinding;
 import com.example.apptestkztek.view.activity.BaseActivity;
 import com.example.apptestkztek.view.activity.ConnectDeviceActivity;
+import com.example.apptestkztek.view.activity.ResetActivity;
 import com.example.apptestkztek.view.activity.SettingActivity;
 import com.example.apptestkztek.view.activity.StatusActivity;
 import com.example.apptestkztek.view.activity.UserCardActivity;
@@ -27,30 +28,25 @@ public class MainActivity extends BaseActivity {
 
     private void BackToConnectDeviceActivity() {
         startActivity(new Intent(this, ConnectDeviceActivity.class));
-        finish();
     }
 
     private void NextToResetActivity() {
-
+        startActivity(new Intent(this, ResetActivity.class));
     }
 
     private void NextToVersionInforActivity() {
         startActivity(new Intent(this, VersionInforActivity.class));
-        finish();
     }
 
     private void NextToStatusActivity() {
         startActivity(new Intent(this, StatusActivity.class));
-        finish();
     }
 
     private void NextToAddCardActivity() {
         startActivity(new Intent(this, UserCardActivity.class));
-        finish();
     }
 
     private void NextToSettingActivity() {
         startActivity(new Intent(this, SettingActivity.class));
-        finish();
     }
 }

@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
 import com.example.apptestkztek.controller.client.UdpClientManager;
 import com.example.apptestkztek.model.User;
 
@@ -52,7 +51,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         new Thread(() -> {
             String dataReq = UdpClientManager.getInstance().require(Constant.deleteUserID + userList.get(position).getUserId());
             Log.e("deleteUserCard: ", dataReq);
-            String statusRes = UdpClient.response();
+            String statusRes = UdpClientManager.getInstance().response();
             Log.e( "deleteUserCard: ", statusRes);
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(() -> {

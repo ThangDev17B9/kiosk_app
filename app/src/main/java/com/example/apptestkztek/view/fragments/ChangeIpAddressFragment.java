@@ -1,5 +1,6 @@
 package com.example.apptestkztek.view.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,8 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
 import com.example.apptestkztek.controller.client.UdpClientManager;
+import com.example.apptestkztek.view.activity.ConnectDeviceActivity;
 
 import java.util.Objects;
 
@@ -44,8 +45,9 @@ public class ChangeIpAddressFragment extends Fragment {
         new Thread(()->{
             try {
                 UdpClientManager.getInstance().require(Constant.autoDetect);
-                String dataRes = UdpClient.response();
-                if(!dataRes.equals("TimeoutException") && !dataRes.equals("Error: IOException")){
+                String dataRes = UdpClientManager.getInstance().response();
+                Log.e( "showAutoDirect: ", dataRes);
+                if(!dataRes.equals("Error: TimeoutException")){
                     String[] data = dataRes.split("/");
                     requireActivity().runOnUiThread(()->{
                         edtIpAddress.setText(data[1]);
@@ -89,8 +91,20 @@ public class ChangeIpAddressFragment extends Fragment {
                             + Constant.subnetMask + txtSubnetMask
                             + Constant.defaultGateWay + txtDefaultGateway
                             + Constant.hostMac + txtMacAddress);
-                    requireActivity().runOnUiThread(()->
-                            Toast.makeText(getContext(), "Gửi yêu cầu thành công", Toast.LENGTH_SHORT).show());
+                    String dataRes = UdpClientManager.getInstance().response();
+                    if(dataRes.equals(Constant.changeIp + "OK")){
+                        requireActivity().runOnUiThread(()->{
+                            Toast.makeText(getContext(), "Cấu hình thành công", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getContext(), ConnectDeviceActivity.class));
+                        });
+                    }else if(dataRes.equals(Constant.changeIp + "ERR")){
+                        requireActivity().runOnUiThread(()->
+                                Toast.makeText(getContext(), "Cấu hình thất bại", Toast.LENGTH_SHORT).show());
+                    } else{
+                        requireActivity().runOnUiThread(()->
+                                Toast.makeText(getContext(), "Không nhận được phản hồi từ thiết bị", Toast.LENGTH_SHORT).show());
+                    }
+
                 }
             } catch (Exception e) {
                 Log.e("Lỗi khi gửi yêu cầu", Objects.requireNonNull(e.getMessage()));

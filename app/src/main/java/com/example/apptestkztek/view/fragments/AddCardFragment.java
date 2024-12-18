@@ -12,18 +12,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.apptestkztek.controller.generate.GenerateDoorHex;
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.view.adapter.CheckboxDoorAdapter;
 import com.example.apptestkztek.domain.api.Constant;
-import com.example.apptestkztek.controller.client.UdpClient;
 import com.example.apptestkztek.controller.client.UdpClientManager;
 import com.example.apptestkztek.model.Door;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +43,6 @@ public class AddCardFragment extends Fragment {
         actvCard = view.findViewById(R.id.actvCardId);
         actvLenCard = view.findViewById(R.id.actvLenCard);
         btnSaveCard = view.findViewById(R.id.btnSaveCardUser);
-        cbDoorModeAll = view.findViewById(R.id.cbDoorModeAll);
         recyclerViewDoor = view.findViewById(R.id.recyclerViewDoor);
         ivDrop = view.findViewById(R.id.ivDropDown);
         ivDrop.setOnClickListener(v->ShowRecyclerView());
@@ -121,7 +116,7 @@ public class AddCardFragment extends Fragment {
                                 + Constant.timeZone + timezone
                                 + Constant.door + hexString
                 );
-                String dataUserDownload = UdpClient.response();
+                String dataUserDownload = UdpClientManager.getInstance().response();
                 if (dataUserDownload.equals("DownloadUser?/OK")) {
                     requireActivity().runOnUiThread(() ->{
                         Toast.makeText(getContext(), "Thêm thẻ người dùng thành công", Toast.LENGTH_SHORT).show();
@@ -148,7 +143,7 @@ public class AddCardFragment extends Fragment {
     private void showAdapterCheckboxDoor() {
         new Thread(() -> {
             doorList = new ArrayList<>();
-            for (int i = 0; i < 64; i++) {
+            for (int i = 0; i < 4; i++) {
                 doorList.add(new Door(String.valueOf(i + 1), false));
             }
             requireActivity().runOnUiThread(() -> {

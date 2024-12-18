@@ -4,12 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
 import com.example.apptestkztek.MainActivity;
 import com.example.apptestkztek.controller.client.UdpClientManager;
 import com.example.apptestkztek.databinding.ActivityConnectDeviceBinding;
+import com.example.apptestkztek.domain.api.Constant;
 
 public class ConnectDeviceActivity extends BaseActivity {
     public ActivityConnectDeviceBinding binding;
@@ -23,9 +24,16 @@ public class ConnectDeviceActivity extends BaseActivity {
         binding.actvBDKConnectDevice.setOnClickListener(v -> ListItemBDKConnectDevice());
         binding.actvMethodConnectDevice.setOnClickListener(v -> ListItemMethod());
         binding.btnConnectDevice.setOnClickListener(v -> ConnectDevice());
-        binding.btnBackToOptionActivity.setOnClickListener(t-> BackToOptionActivity());
-        binding.edtIpAddressConnectDevice.setText("192.168.20.159");
+        binding.btnBackToOptionActivity.setOnClickListener(v -> BackToOptionActivity());
+        binding.btnNextToFindDevicesActivity.setOnClickListener(v -> NextToFindDevicesActivity());
+        binding.progressBar.setVisibility(View.GONE);
+        binding.edtIpAddressConnectDevice.setText("192.168.20.");
         binding.edtPortConnectDevice.setText("100");
+    }
+
+    private void NextToFindDevicesActivity() {
+        startActivity(new Intent(this, FindDevicesActivity.class));
+        finish();
     }
 
     private void BackToOptionActivity() {
@@ -34,24 +42,43 @@ public class ConnectDeviceActivity extends BaseActivity {
     }
 
     private void ConnectDevice() {
+        binding.progressBar.setVisibility(View.VISIBLE);
         String modeBDK = binding.actvBDKConnectDevice.getText().toString();
         String modeMethod = binding.actvMethodConnectDevice.getText().toString();
         String ipAddress = binding.edtIpAddressConnectDevice.getText().toString();
         String port = binding.edtPortConnectDevice.getText().toString();
         if (modeBDK.isEmpty() || modeMethod.isEmpty() || ipAddress.isEmpty() || port.isEmpty()) {
+            binding.progressBar.setVisibility(View.GONE);
             Toast.makeText(this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
         new Thread(() -> {
             try {
                 UdpClientManager.connect(ipAddress, Integer.parseInt(port));
-                runOnUiThread(() -> Toast.makeText(this, "Kết nối thành công", Toast.LENGTH_SHORT).show());
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                UdpClientManager.getInstance().require(Constant.autoDetect);
+                String dataRes = UdpClientManager.getInstance().response();
+                Log.e("ConnectDevice: ", dataRes);
+                if(dataRes.equals("Error: TimeoutException")){
+                    runOnUiThread(()->{
+                        binding.progressBar.setVisibility(View.GONE);
+                        Toast.makeText(this, "Không có phản hồi", Toast.LENGTH_SHORT).show();
+                    });
+                }else{
+                    runOnUiThread(() ->{
+                        binding.progressBar.setVisibility(View.GONE);
+                        Toast.makeText(this, "Kết nối thành công", Toast.LENGTH_SHORT).show();
+                    });
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             } catch (Exception e) {
                 Log.e("ConnectDevice: ", "fail", e);
-                runOnUiThread(() -> Toast.makeText(this, "Kết nối không thành công", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() ->{
+                    binding.progressBar.setVisibility(View.GONE);
+                    Toast.makeText(this, "Kết nối không thành công", Toast.LENGTH_SHORT).show();
+                });
             }
         }).start();
     }

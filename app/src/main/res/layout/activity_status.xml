@@ -71,6 +71,7 @@
                     android:layout_height="wrap_content"
                     tools:ignore="HardcodedText" />
                 <EditText
+                    android:textColor="@color/white_off"
                     android:hint="number"
                     android:id="@+id/edtFindCabinetToNumber"
                     android:padding="8dp"
@@ -109,6 +110,14 @@
                     android:layout_height="wrap_content"
                     tools:ignore="HardcodedText" />
             </LinearLayout>
+            <Button
+                android:id="@+id/btnNextOpenCabinetActivity"
+                android:backgroundTint="#00BFA5"
+                android:layout_margin="8dp"
+                android:text="Test mở tủ đồ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>

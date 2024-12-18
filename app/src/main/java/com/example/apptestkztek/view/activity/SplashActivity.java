@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.widget.VideoView;
-
 import com.example.apptestkztek.R;
 import com.example.apptestkztek.controller.root.shell.OverscanHelper;
 
